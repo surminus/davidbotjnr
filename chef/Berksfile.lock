@@ -1,0 +1,7 @@
+DEPENDENCIES
+  docker (~> 4.6.5)
+  sudo (~> 5.4.4)
+
+GRAPH
+  docker (4.6.5)
+  sudo (5.4.4)

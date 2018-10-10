@@ -1,0 +1,6 @@
+source 'https://supermarket.chef.io'
+
+cookbook 'docker', '~> 4.6.5'
+cookbook 'sudo', '~> 5.4.4'
+
+metadata
