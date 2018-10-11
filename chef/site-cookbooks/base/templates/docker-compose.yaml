@@ -1,0 +1,7 @@
+version: "3"
+
+services:
+  davidbot:
+    image: surminus/davidbotjnr
+    env_file:
+      - /etc/davidbot/.env
