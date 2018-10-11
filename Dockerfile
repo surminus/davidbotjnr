@@ -1,7 +1,4 @@
 FROM ruby:latest
-
 COPY . .
-
-RUN bundle install
-
-CMD bundle exec ruby davidbotjnr.rb
+RUN bundle install --without development
+CMD bundle exec bin/davidbot.rb
