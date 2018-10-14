@@ -7,6 +7,37 @@ for IRC clients.
 This is a replacement written in Ruby using the
 [slack-ruby-bot](https://github.com/slack-ruby/slack-ruby-bot) gem.
 
+# Behaviours
+
+## Hooks
+
+### Join channel
+
+[[lib/davidbot/hooks/join_channel.rb]]
+
+Says a greeting when a user joins the channel.
+
+### Leave channel
+
+[[lib/davidbot/hooks/leave_channel.rb]]
+
+Says a goodbye when a user leaves the channel.
+
+## Commands
+
+### foo
+
+[[lib/davidbot/commands/foo.rb]]
+
+Replies with "bar".
+
+### Weather
+
+[[lib/davidbot/commands/weather.rb]]
+
+Scans for the phrase similar to "weather in London" and outputs the
+temperature and chance of rain in a human readable format.
+
 # Contributing
 
 ## Setup

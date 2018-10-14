@@ -1,7 +1,7 @@
 require 'httparty'
 
 class Weather < SlackRubyBot::Bot
-  match /[W|w]eather in (?<location>\w*)/ do |client, data, match|
+  match /[w|W]eather in (?<location>.*)[\?]?$/ do |client, data, match|
     api_key = ENV['DATAPOINT_API_TOKEN']
     query_location = match[:location].capitalize
 
@@ -12,7 +12,7 @@ class Weather < SlackRubyBot::Bot
       location_exact = locations.select { |l| l['name'] == query_location }
       location_fuzzy = locations.select { |l| l['name'] =~ /#{query_location}/ }
       if location_exact.empty? && location_fuzzy.empty?
-        client.say(channel: data.channel, text: "I'm sorry, I don't know #{query_location}.")
+        client.say(channel: data.channel, text: "I'm sorry, I don't know #{query_location}. I can only do UK weather at the moment.")
       else
         unless location_exact.empty?
           location = location_exact.first['id']
