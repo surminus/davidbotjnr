@@ -1,7 +1,7 @@
 require 'httparty'
 
 class Weather < SlackRubyBot::Bot
-  match /weather in (?<location>\w*)/ do |client, data, match|
+  match /[W|w]eather in (?<location>\w*)/ do |client, data, match|
     api_key = ENV['DATAPOINT_API_TOKEN']
     query_location = match[:location].capitalize
 
