@@ -2,11 +2,12 @@
 
 require 'slack-ruby-bot'
 
-# Load all the hooks
-Dir[File.join(__dir__, 'davidbot', 'hooks', '*.rb')].each { |file| require file }
-
-# Load all other commands
-Dir[File.join(__dir__, 'davidbot', 'commands', '*.rb')].each { |file| require file }
+# Load all hooks and commands
+%w[commands hooks].each do |dir|
+  Dir[File.join(__dir__, 'davidbot', dir, '*.rb')].each do |file|
+    require file
+  end
+end
 
 class DavidBot < SlackRubyBot::Bot
 end
